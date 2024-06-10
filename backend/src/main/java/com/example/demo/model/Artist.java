@@ -1,9 +1,9 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 public class Artist {
@@ -14,6 +14,9 @@ public class Artist {
     private String name;
     private String bio;
     private String image;
+
+//    @OneToMany(mappedBy = "artist_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Booking> bookings = new ArrayList<>();
 
     public Artist() {
     }
@@ -56,4 +59,19 @@ public class Artist {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+//
+//    public void addBooking(Booking booking) {
+//        bookings.add(booking);
+//        booking.setArtist(this);
+//    }
+
+
 }

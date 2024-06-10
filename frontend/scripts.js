@@ -106,7 +106,7 @@ function submit(event) {
 
         // Example of sending data to a server (replace with your actual URL and logic)
         
-        fetch('your-server-endpoint', {
+        fetch('http://localhost:8082/api/bookings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

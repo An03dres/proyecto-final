@@ -21,9 +21,13 @@ public class TattooApplication {
 	@Bean
 	CommandLineRunner initDatabase() {
 		return args -> {
+			artistRepository.deleteAll();
 			artistRepository.save(new Artist("Artist 1", "Artist 1 bio", "https://randomuser.me/api/portraits/men/63.jpg"));
 			artistRepository.save(new Artist("Artist 2", "Artist 2 bio", "https://randomuser.me/api/portraits/men/2.jpg"));
 			artistRepository.save(new Artist("Artist 3", "Artist 3 bio", "https://randomuser.me/api/portraits/men/8.jpg"));
+			artistRepository.save(new Artist("Artist 4", "Artist 4 bio", "https://randomuser.me/api/portraits/men/98.jpg"));
+			artistRepository.save(new Artist("Artist 5", "Artist 5 bio", "https://randomuser.me/api/portraits/men/32.jpg"));
+			artistRepository.save(new Artist("Artist 6", "Artist 6 bio", "https://randomuser.me/api/portraits/men/6.jpg"));
 		};
 	}
 }
