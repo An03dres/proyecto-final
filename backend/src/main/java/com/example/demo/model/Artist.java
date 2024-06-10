@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Artist {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,7 +15,16 @@ public class Artist {
     private String bio;
     private String image;
 
-    // Getters and Setters
+    public Artist() {
+    }
+
+    public Artist(String name, String bio, String image) {
+        this.name = name;
+        this.bio = bio;
+        this.image = image;
+    }
+
+    // Getters and setters
     public Long getId() {
         return id;
     }

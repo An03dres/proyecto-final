@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "bio": "Artist 1 bio",
+    "image": "https://randomuser.me/api/portraits/men/63.jpg",
+    "name": "Artist 1"
+  },
+  {
+    "id": 2,
+    "bio": "Artist 2 bio",
+    "image": "https://randomuser.me/api/portraits/men/2.jpg",
+    "name": "Artist 2"
+  },
+  {
+    "id": 3,
+    "bio": "Artist 3 bio",
+    "image": "https://randomuser.me/api/portraits/men/8.jpg",
+    "name": "Artist 3"
+  }
+]
