@@ -1,20 +1,29 @@
 [
   {
     "id": 1,
-    "bio": "Artist 1 bio",
+    "bio": "Carlos santana is a skilled tattoo artist specializing in traditional style. Known for bold lines and vibrant colors, he works at tattoShop, earning admiration for his dedication and artistry. He also participates in tattoo conventions, continually refining his craft.",
     "image": "https://randomuser.me/api/portraits/men/63.jpg",
-    "name": "Artist 1"
+    "name": "Carlos Santana",
+    "bookings": []
   },
   {
     "id": 2,
-    "bio": "Artist 2 bio",
+    "bio": "Albert Ruiz is a talented tattoo artist specializing in blackout style. Known for his mastery of bold, solid designs, he works at TattooShop, where he showcases his dedication and creativity. Constantly pushing the boundaries of blackout artistry.",
     "image": "https://randomuser.me/api/portraits/men/2.jpg",
-    "name": "Artist 2"
+    "name": "Albert Ruiz",
+    "bookings": []
   },
   {
     "id": 3,
-    "bio": "Artist 3 bio",
+    "bio": "Juan Cruz is a skilled tattoo artist specializing in watercolor style. Known for his vibrant colors and fluid designs, he works at TattooShop, where he showcases his dedication and creativity. Constantly pushing the boundaries of watercolor artistry.",
     "image": "https://randomuser.me/api/portraits/men/8.jpg",
-    "name": "Artist 3"
+    "name": "Juan Cruz",
+    "bookings": [
+      {
+        "id": 1,
+        "date": "2020-01-01",
+        "artistId": 3
+      }
+     ] 
   }
 ]

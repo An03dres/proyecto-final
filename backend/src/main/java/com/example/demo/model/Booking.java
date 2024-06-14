@@ -1,8 +1,8 @@
 package com.example.demo.model;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-
 import java.util.Date;
 
 // Entity es una clase que se mapea a una tabla en la base de datos
@@ -14,15 +14,22 @@ public class Booking {
     // GeneratedValue indica que el valor de la clave primaria se generará automáticamente
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    // ManyToOne indica que la relación entre Booking y Artist es de muchos a uno
-    @ManyToOne
-    @JoinColumn(name = "artist_id")
     @NotNull(message = "Artist is required.")
-    private Artist artist;
-
+    private Long artist_id;
+    @NotNull(message = "User is required.")
+    private Long user_id;
     @NotNull(message = "Date is required.")
     private Date date;
+
+    // Constructor sin argumentos
+    public Booking() {
+    }
+
+    public Booking(Long artist_id, Long user_id, Date date) {
+        this.artist_id = artist_id;
+        this.user_id = user_id;
+        this.date = date;
+    }
 
     // Getters and Setters
     public Long getId() {
@@ -33,12 +40,12 @@ public class Booking {
         this.id = id;
     }
 
-    public Artist getArtist() {
-        return artist;
+    public Long getArtistId() {
+        return artist_id;
     }
 
-    public void setArtist(Artist artist) {
-        this.artist = artist;
+    public void setArtistId(Long artistId){
+        this.artist_id = artistId;
     }
 
     public Date getDate() {
@@ -47,5 +54,13 @@ public class Booking {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Long getUserId() {
+        return user_id;
+    }
+
+    public void setUserId(Long userId) {
+        this.user_id = userId;
     }
 }

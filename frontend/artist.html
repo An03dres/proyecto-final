@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">Tattoo Studio</a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./artists.html">Artist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./bookings.html">Book an Appointment</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html">
+                  <span class="me-2">Login</span>
+                  <i class="fa-solid fa-user"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <section id="artist-profile" class="d-flex justify-content-center align-items-center">
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        // reconoce el query param artist_id
+        const urlParams = new URLSearchParams(window.location.search);
+        // obtiene el valor del query param artist_id
+        const artistId = urlParams.get('artist_id');
+        // imprime el valor del query param artist_id (1 o 2 etc)
+        console.log(artistId)
+
+        // cuando el DOM esté cargado ejecuta la función
+        document.addEventListener('DOMContentLoaded', () => {
+        // fetch a artists.json
+        fetch('./artists.json')
+        // convierte la respuesta en json
+        .then(response => response.json())
+        // obtiene los artistas
+        .then(artists => {
+            console.log(artists)
+            // encuentra el artista con el id que coincide con el query param artist_id
+            // artist es el objeto que coincide con el id
+            const artistObject = artists.find(artist => artist.id == artistId)
+            console.log(artistObject)
+            // selecciona el elemento con el id artist-profile
+            const artistProfile = document.getElementById('artist-profile')
+            // crea un div con la clase card
+            artistProfile.innerHTML = `
+            <div class="card" style="width: 18rem;">
+            <img src="${artistObject.image}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">${artistObject.name}</h5>
+                <p class="card-text">${artistObject.bio}</p>
+                <a href="./bookings.html?artist_id=${artistObject.id}" class="btn btn-primary">Book Now</a>
+            </div>
+            </div>
+            `
+        })
+        .catch(error => {
+            console.error('Error', error)
+        })
+    }) 
+    </script>
+</body>
+</html>

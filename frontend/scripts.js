@@ -47,7 +47,7 @@
 // });
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:8082/api/artists')
+    fetch('./artists.json')
         .then(response => response.json())
         .then(artists => {
             console.log(artists)
@@ -105,11 +105,13 @@ function submit(event) {
         console.log('Date:', date);
 
         // Example of sending data to a server (replace with your actual URL and logic)
-        
+        let token = localStorage.getItem('token');
         fetch('http://localhost:8082/api/bookings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                // Set Token 
+                 'Authorization': 'Bearer ' + token
             },
             body: JSON.stringify({ artist_id: artist, date: date }),
         })
