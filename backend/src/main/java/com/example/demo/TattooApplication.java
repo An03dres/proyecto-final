@@ -45,6 +45,24 @@ public class TattooApplication {
 							"Juan Cruz is a skilled tattoo artist specializing in watercolor style. Known for his vibrant colors and fluid designs, he works at TattooShop, where he showcases his dedication and creativity. Constantly pushing the boundaries of watercolor artistry.",
 							"https://randomuser.me/api/portraits/men/8.jpg"
 					));
+			artistRepository.save(
+					new Artist(
+							"Maria Garcia",
+							"Maria Garcia is a talented tattoo artist specializing in realism style. Known for her intricate details and lifelike designs, she works at TattooShop, where she showcases her dedication and creativity. Constantly pushing the boundaries of realism artistry.",
+							"https://randomuser.me/api/portraits/women/10.jpg"
+					));
+			artistRepository.save(
+					new Artist(
+							"Lucia Fernandez",
+							"Lucia Fernandez is a skilled tattoo artist specializing in geometric style. Known for her precise lines and intricate patterns, she works at TattooShop, where she showcases her dedication and creativity. Constantly pushing the boundaries of geometric artistry.",
+							"https://randomuser.me/api/portraits/women/12.jpg"
+					));
+			artistRepository.save(
+					new Artist(
+							"Javier Lopez",
+							"Javier Lopez is a talented tattoo artist specializing in Japanese style. Known for his bold designs and rich symbolism, he works at TattooShop, where he showcases his dedication and creativity. Constantly pushing the boundaries of Japanese artistry.",
+							"https://randomuser.me/api/portraits/women/14.jpg"
+					));
 
 			userRepository.deleteAll();
 		};

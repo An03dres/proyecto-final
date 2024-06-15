@@ -55,16 +55,14 @@
         // cuando el DOM esté cargado ejecuta la función
         document.addEventListener('DOMContentLoaded', () => {
         // fetch a artists.json
-        fetch('./artists.json')
+        fetch('http://localhost:8082/api/artists/' + artistId)
         // convierte la respuesta en json
         .then(response => response.json())
-        // obtiene los artistas
-        .then(artists => {
-            console.log(artists)
-            // encuentra el artista con el id que coincide con el query param artist_id
-            // artist es el objeto que coincide con el id
-            const artistObject = artists.find(artist => artist.id == artistId)
-            console.log(artistObject)
+        // recoge los datos de un artista
+        .then(data => {
+            console.log(data)
+            // crea una constante artistObject con los datos
+            const artistObject = data 
             // selecciona el elemento con el id artist-profile
             const artistProfile = document.getElementById('artist-profile')
             // crea un div con la clase card

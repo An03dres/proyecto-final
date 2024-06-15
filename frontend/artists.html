@@ -48,7 +48,7 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:8082/api/artists')
+    fetch('http://localhost:8082/api/artists/all')
         .then(response => response.json())
         .then(artists => {
             console.log(artists)
@@ -63,7 +63,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">${artist.name}</h5>
                                 <p class="card-text">${artist.bio}</p>
-                                <a class="btn btn-primary" href="./artist.html?artist_id=${artist.id}" role="button">See Profile</a>
+                                <a class="btn btn-primary" href="./artist-bio.html?artist_id=${artist.id}" role="button">See Profile</a>
                             </div>
                         </div>
                     `;
