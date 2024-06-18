@@ -1,1 +1,0 @@
-SELECT * FROM tattoo_db.artist;
